@@ -1,0 +1,59 @@
+<script type="text/javascript" src="jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="handlebars-v4.0.5.js"></script>
+
+
+<script id="built-in-helpers-template" type="text/x-handlebars-template">
+    {{#each animals}}
+    <p>
+        The {{capitalize this.name}} says
+        {{#if this.noise}}
+            "{{this.noise}}"
+        {{else}}
+            nothing since its a {{this.name}}
+        {{/if}}
+    </p>
+    {{/each}}
+</script>
+
+<div class="context-placeholder"></div>
+
+<script>
+    $(function () {
+        //register a helper
+        Handlebars.registerHelper('capitalize',function (str) {
+            //str is the argument passed to the helper when called
+            str = str || '';
+            return str.slice(0,1).toUpperCase()+str.slice(1);
+        });
+
+        //grab the template script
+        var theTemplateScript = $("#built-in-helpers-template").html();
+        //compile the template
+        var theTemplate = Handlebars.compile(theTemplateScript);
+        // We will call this template on an array of objects
+        var context = {
+            animals:[
+                {
+                    name: "cow",
+                    noise: "moooo"
+                },
+                {
+                    name: "cat",
+                    noise: "meow"
+                },
+                {
+                    name: "fish",
+                    noise: ""
+                },
+                {
+                    name: "farmer",
+                    noise: "Get off my property!"
+                }
+            ]
+        };
+        //pass our data to the template
+        var theCompiledHtml = theTemplate(context);
+        //add the compiled html to the page
+        $('.context-placeholder').html(theCompiledHtml);
+    })
+</script>
