@@ -1,0 +1,33 @@
+<script type="text/javascript" src="jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="handlebars-v4.0.5.js"></script>
+<div id="target01"></div>
+<script id="template01" type="text/x-handlebars-template">
+    {{#each users as |user userIndex|}}
+    index: {{userIndex}} Id: {{user.userId}} Name: {{user.userName}}</br>
+    {{/each}}
+</script>
+<script>
+    var data={
+        users:[
+            {userId:"1u", userName:"1n"},
+            {userId:"2u", userName:"2n"},
+            {userId:"3u", userName:"3n"}
+        ]
+    }
+    var template=Handlebars.compile($("#template01").html());
+    $("#target01").html(template(data));
+</script>
+
+
+<!--  not block-params build in
+<div id="target02"></div>
+<script id="template02" type="text/x-handlebars-template">
+    {{#block-params 1 2 3 as |foo bar baz|}}
+    {{foo}} {{bar}} {{baz}}
+    {{/block-params}}
+</script>
+<script>
+    var data=["1","2","3"];
+    var template=Handlebars.compile($("#template02").html());
+    $("#target02").html(template(data));
+</script>-->

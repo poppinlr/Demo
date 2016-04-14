@@ -1,0 +1,34 @@
+<script type="text/javascript" src="jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="handlebars-v4.0.5.js"></script>
+
+<div id="target01"></div>
+
+<script id="template01" type="text/x-handlebars-template">
+    {{#list people class="green"}}{{firstName}}-----{{lastName}}{{/list}}
+    {{#list people class="red"}}{{firstName}}-----{{lastName}}{{/list}}
+</script>
+
+<script>
+    Handlebars.registerHelper('list', function(items, options) {
+        var out = '<ul>';
+        for(var i=0, l=items.length; i<l; i++) {
+            var item = options.fn(items[i]);
+            out = out + '<li class="'+options.hash.class+'"> class='+ options.hash.class +'   '+ item + '</li>';
+
+//            var item=items[i];
+//            out = out + '<li>'+ item.firstName + '</li>';
+        }
+        return out + '</ul>';
+    });
+
+    var data = {
+        people: [
+            {firstName: "Yehuda", lastName: "Katz"},
+            {firstName: "Carl", lastName: "Lerche"},
+            {firstName: "Alan", lastName: "Johnson"}
+        ]
+    }
+
+    var template = Handlebars.compile($("#template01").html());
+    $("#target01").html(template(data));
+</script>

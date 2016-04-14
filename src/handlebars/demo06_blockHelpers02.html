@@ -1,0 +1,35 @@
+<script type="text/javascript" src="jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="handlebars-v4.0.5.js"></script>
+
+<div id="target01"></div>
+
+<script id="template01" type="text/x-handlebars-template">
+    <div class="entry">
+        <h1>{{this.title}}</h1>
+        <div class="body">
+            {{#noop}}{{this.body}}{{/noop}}
+        </div>
+        {{#bold}}{{this.body}}{{/bold}}
+    </div>
+</script>
+
+<script>
+    var data = {
+        title:"title",body:"body"
+    };
+    Handlebars.registerHelper('noop',function (options) {
+        console.log(options==options.fn(this));
+        console.log(Handlebars.SafeString(this)==options.fn(this));
+        return options.fn(this);
+    });
+
+    Handlebars.registerHelper('bold', function(options) {
+        return new Handlebars.SafeString(
+                '<div class="mybold">'
+                + options.fn(this)
+                + '</div>');
+    });
+
+    var template = Handlebars.compile($("#template01").html());
+    $("#target01").html(template(data));
+</script>
