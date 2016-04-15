@@ -3,6 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FrontTech.iml" filepath="$PROJECT_DIR$/FrontTech.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Handlebars/Handlebars.iml" filepath="$PROJECT_DIR$/Handlebars/Handlebars.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lombook/Lombook.iml" filepath="$PROJECT_DIR$/Lombook/Lombook.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nodejs/Nodejs.iml" filepath="$PROJECT_DIR$/Nodejs/Nodejs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Requirejs/Requirejs.iml" filepath="$PROJECT_DIR$/Requirejs/Requirejs.iml" />
     </modules>
   </component>
 </project>

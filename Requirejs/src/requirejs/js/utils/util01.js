@@ -1,0 +1,1 @@
+alert("util01.js is loaded!");
