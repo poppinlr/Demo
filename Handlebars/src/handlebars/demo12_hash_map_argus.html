@@ -1,0 +1,26 @@
+<script type="text/javascript" src="jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="handlebars-v4.0.5.js"></script>
+
+<div id="target"></div>
+<script id="template" type="text/x-handlebars-template">
+    {{link  "see more" args1 = "args1" args2 = "args2"}}
+</script>
+
+<script>
+    Handlebars.registerHelper("link",function (text, args) {
+        var attrs = [];
+
+        for (var prop in args.hash) {
+            attrs.push(
+                    Handlebars.escapeExpression(prop) + '="'
+                    + Handlebars.escapeExpression(args.hash[prop]) + '"');
+        }
+
+        return new Handlebars.SafeString(
+                attrs.join(" ") + "<br>"
+                + Handlebars.escapeExpression(text)
+        );
+    });
+    var handleTemplate = Handlebars.compile($("#template").html());
+    $("#target").html(handleTemplate());
+</script>
