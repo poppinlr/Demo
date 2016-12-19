@@ -14,7 +14,7 @@
       <entry name="!?*.aj" />
     </wildcardResourcePatterns>
     <annotationProcessing>
-      <profile default="true" name="Default" enabled="false">
+      <profile default="true" name="Default" enabled="true">
         <processorPath useClasspath="true" />
       </profile>
       <profile default="false" name="Maven default annotation processors profile" enabled="true">
@@ -22,15 +22,21 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="GuavaCache" />
+        <module name="HandlebarsJava" />
         <module name="JAVA_BASIC" />
         <module name="Lombook" />
+        <module name="RabbitMQ" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="GuavaCache" target="1.5" />
+      <module name="HandlebarsJava" target="1.5" />
       <module name="JAVA_BASIC" target="1.5" />
       <module name="Lombook" target="1.5" />
       <module name="Querydsl" target="1.5" />
       <module name="QueryJPA" target="1.5" />
+      <module name="RabbitMQ" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

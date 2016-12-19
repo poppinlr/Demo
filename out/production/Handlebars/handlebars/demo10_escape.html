@@ -1,0 +1,42 @@
+<script type="text/javascript" src="jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="handlebars-v4.0.5.js"></script>
+<div></div>
+<script id="template01" type="text/x-handlebars-template">
+    {{{linkDirectValue jerryc}}}
+    <br>{{{linkEscapeExpression jerryc}}}
+    <br>{{{linkSafeString jerryc}}}
+    <br>{{{link jerryc}}}
+</script>
+
+<script>
+    Handlebars.registerHelper('linkDirectValue', function(object) {
+        return "real value:  <a href='" + object.url + "'>" + object.text + "</a>";
+    });
+
+    Handlebars.registerHelper('linkEscapeExpression', function(object) {
+        return Handlebars.escapeExpression("escapeed value:  <a href='" + object.url + "'>" + object.text + "</a>");
+    });
+
+    Handlebars.registerHelper('linkSafeString', function(object) {
+        return new Handlebars.SafeString("safestring value:  <a href='" + object.url + "'>" + object.text + "</a>");
+    });
+
+    Handlebars.registerHelper('link', function(object) {
+        var url = Handlebars.escapeExpression(object.url),
+                text = Handlebars.escapeExpression(object.text);
+
+        return new Handlebars.SafeString(
+                "escape then safestringed value:  <a href='" + url + "'>" + object.text + "</a>"
+        );
+    });
+
+    var data = {
+        jerryc:{
+            url : "http://huang-jerryc.com",
+            text: "Bluesun --The personal Blog"
+        }
+    };
+
+    var template = Handlebars.compile($("#template01").html());
+    $('div').html(template(data));
+</script>

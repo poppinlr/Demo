@@ -1,0 +1,10 @@
+
+<div id="target">
+    {{chechStatuc "target" arg1 = 1 arg2 = 2}}
+</div>
+
+<script>
+    Handlebars.registerHelper("chechStatuc",function (id, args) {
+        $("#"+id).html(args.hash['arg1']+ " : "+args.hash['arg2']);
+    })
+</script>

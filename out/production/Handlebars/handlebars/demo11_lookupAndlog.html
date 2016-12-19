@@ -1,0 +1,25 @@
+<script type="text/javascript" src="jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="handlebars-v4.0.5.js"></script>
+
+<div></div>
+
+<script id="template01" type="text/x-handlebars-template">
+    {{#each foo}}
+    <li>{{this}} {{@index}}</li>
+    {{/each}}
+
+    {{#each foo}}
+    <li>{{lookup ../foo 2}}</li>
+    {{/each}}
+
+    {{lookup ../foo @index}}
+</script>
+
+<script>
+    var data = {
+        foo:["foo1","foo2","foo3","foo4"]
+    }
+
+    var tamplate = Handlebars.compile($("#template01").html());
+    $('div').html(tamplate(data));
+</script>

@@ -1,0 +1,42 @@
+<script type="text/javascript" src="jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="handlebars-v4.0.5.js"></script>
+
+<div id="show"></div>
+
+<script id = "template_regist" type="text/x-handlebars-template">
+    <div class="express">
+        <h1>{{title}}</h1>
+        <div class="body">
+            {{body}}
+        </div>
+    </div>
+
+    <div class="helper">
+        {{{#link "See more" story.url}}}
+    </div>
+</script>
+
+<script>
+    var template = Handlebars.compile($("#template_regist").html());
+    //var context = {title:"this is a title",body:"this is a body"};
+    var context = {
+        title: "All about <p> Tags",
+        body: "<p>This is a post about &lt;p&gt; tags</p>"
+    };
+
+    $("#show").html(template(context));
+
+
+    //helper
+    Handlebars.registerHelper('link',function (text, url) {
+        alert("in!");
+        text = Handlebars.Utils.escapeExpression(text);
+        url = Handlebars.Utils.escapeExpression(url);
+
+        var result = '<a href="' +url+'">' +text+'</a>';
+
+        return new Handlebars.SafeString(result);
+    })
+
+    var story = {text:"see more",url:"url"};
+</script>

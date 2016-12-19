@@ -1,0 +1,16 @@
+<script type="text/javascript" src="jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="handlebars-v4.0.5.js"></script>
+
+<div id="target"></div>
+<script id="template" type="text/x-handlebars-template">
+    {{}}
+</script>
+
+<script>
+    var handleTemplate = Handlebars.compile($("#template").html());
+
+    var data = {
+    };
+
+    $("#target").html(handleTemplate(data));
+</script>

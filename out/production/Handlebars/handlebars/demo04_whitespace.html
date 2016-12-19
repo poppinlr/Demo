@@ -1,0 +1,43 @@
+<script type="text/javascript" src="jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="handlebars-v4.0.5.js"></script>
+
+<div id="div01"></div>
+<div id="div02"></div>
+
+<script id="template01" type="text/x-handlebars-template">
+    {{#each nav ~}}
+    <a href="{{url}}">
+        {{~#if test}}
+        {{~title}}
+        {{~^~}}
+        Empty
+        {{~/if~}}
+    </a>
+    {{~/each}}
+</script>
+
+<script id="template02" type="text/x-handlebars-template">
+    {{#each nav}}
+    <a href="{{url}}">
+        {{#if test}}
+        {{title}}
+        {{^}}
+        Empty
+        {{/if}}
+    </a>
+    {{~/each}}
+</script>
+
+<script>
+    var data = {
+        nav: [
+            {url: 'foo', test: true, title: 'bar'},
+            {url: 'bar'}
+        ]
+    }
+
+    var template1 = Handlebars.compile($("#template01").html());
+    var template2 = Handlebars.compile($("#template02").html());
+    $("#div01").html(template1(data));
+    $("#div02").html(template2(data));
+</script>

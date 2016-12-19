@@ -1,0 +1,42 @@
+<script type="text/javascript" src="jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="handlebars-v4.0.5.js"></script>
+
+<div id="target01"></div>
+
+<script id="template01" type="text/x-handlebars-template">
+    {{formatnumber num}}
+    <br>
+    <br>
+    {{#if_even num}}
+    {{this.num}} is a even number
+    {{else}}
+    {{this.num}} is a odd number
+    {{/if_even}}
+</script>
+
+<script>
+    Handlebars.registerHelper('formatnumber', function(num, options){
+        console.log('value:', num);
+        console.log('this:', this);
+        num = num + '';
+        return num.replace(/(?=(?!^)(?:\d{3})+(?:\.|$))(\d{3}(\.\d+$)?)/g,',$1');
+    });
+
+    Handlebars.registerHelper('if_even', function(value, options) {
+        console.log('value:', value);
+        console.log('this:', this);
+        console.log('fn(this):', options.fn(this));
+        if((value % 2) == 0) {
+            return options.fn(this);
+        } else {
+            return options.inverse(this);
+        }
+    });
+
+    var data = {
+        num : 2
+    }
+
+    var template = Handlebars.compile($("#template01").html());
+    $("#target01").html(template(data));
+</script>
