@@ -40,7 +40,7 @@ public class BasicTemp {
 //
 //
 //        list1.removeAll(list2);
-//        System.out.println(list1);
+        System.out.println("rollback test");
 
     }
 }
