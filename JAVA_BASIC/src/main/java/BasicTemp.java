@@ -1,7 +1,8 @@
-import java.math.BigDecimal;
+
+import org.apache.commons.lang3.time.DateUtils;
+
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
+import java.util.Date;
 
 /**
  * Created by zshen on 6/14/16.
@@ -40,7 +41,28 @@ public class BasicTemp {
 //
 //
 //        list1.removeAll(list2);
-        System.out.println("rollback test");
+//        System.out.println(true && !false);
 
+//        Long test = null;
+//
+//        System.out.println(test.longValue());
+//
+//        Pair<String,Date> pair = new Pair<String, Date>("1",new Date());
+//        pair.getKey();
+
+//        System.out.printf(String.valueOf("test".equals(null)));
+
+//        ArrayList<String> list = new ArrayList<String>();
+//        list.add("a");
+//        list.add("b");
+////        System.out.printf(list.toString());
+//
+//        System.out.printf(String.join("|",list));
+
+        Date date0 = new Date(2017,2,3,12,1);
+        Date date1 = new Date(2017,2,3,12,2);
+
+
+        System.out.println(DateUtils.isSameDay(date1, date0));
     }
 }
