@@ -3,12 +3,22 @@ import org.apache.commons.lang3.time.DateUtils;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by zshen on 6/14/16.
  */
 public class BasicTemp {
+
+
     public static void main(String[] args) {
+
+        final String str = "1";
+        final int i = 1;
+        final ArrayList list = new ArrayList();
+
+        list.add(1);
+        System.out.printf(list.toString());
 //        Calendar calendar = Calendar.getInstance();
 //        calendar.get(Calendar.DAY_OF_WEEK);
 
@@ -38,8 +48,8 @@ public class BasicTemp {
 //        list2.add("1");
 //        list2.add("2");
 //        list2.add("4");
-//
-//
+
+
 //        list1.removeAll(list2);
 //        System.out.println(true && !false);
 
@@ -58,11 +68,13 @@ public class BasicTemp {
 ////        System.out.printf(list.toString());
 //
 //        System.out.printf(String.join("|",list));
+//
+//        Date date0 = new Date(2017,2,3,12,1);
+//        Date date1 = new Date(2017,2,3,12,2);
+//
+//
+//        System.out.println(DateUtils.isSameDay(date1, date0));
 
-        Date date0 = new Date(2017,2,3,12,1);
-        Date date1 = new Date(2017,2,3,12,2);
-
-
-        System.out.println(DateUtils.isSameDay(date1, date0));
+        Double.valueOf(null);
     }
 }
