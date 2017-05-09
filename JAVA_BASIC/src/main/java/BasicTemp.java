@@ -1,7 +1,9 @@
 
 import org.apache.commons.lang3.time.DateUtils;
+import staticdemo.Employee;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -15,10 +17,14 @@ public class BasicTemp {
 
         final String str = "1";
         final int i = 1;
-        final ArrayList list = new ArrayList();
-
-        list.add(1);
+        ArrayList<Employee> list = new ArrayList();
+        EmployeeComp comp = new EmployeeComp();
+//        Arrays.sort(list, comp);
         System.out.printf(list.toString());
+
+        Employee employee = new Employee();
+        Employee clone = employee.clone();
+
 //        Calendar calendar = Calendar.getInstance();
 //        calendar.get(Calendar.DAY_OF_WEEK);
 
