@@ -23,7 +23,9 @@ public class BasicTemp {
         System.out.printf(list.toString());
 
         Employee employee = new Employee();
-        Employee clone = employee.clone();
+        employee.testClone(employee);
+
+
 
 //        Calendar calendar = Calendar.getInstance();
 //        calendar.get(Calendar.DAY_OF_WEEK);
@@ -81,6 +83,6 @@ public class BasicTemp {
 //
 //        System.out.println(DateUtils.isSameDay(date1, date0));
 
-        Double.valueOf(null);
+//        Double.valueOf(null);
     }
 }
