@@ -25,7 +25,17 @@ public class BasicTemp {
         Employee employee = new Employee();
         employee.testClone(employee);
 
+        employee.hashCode();
 
+        List a = new ArrayList();
+
+        a.add(5);
+
+        try {
+            Class.forName("");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
 //        Calendar calendar = Calendar.getInstance();
 //        calendar.get(Calendar.DAY_OF_WEEK);

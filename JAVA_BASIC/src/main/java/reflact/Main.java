@@ -15,7 +15,7 @@ public class Main {
 //        ClassB b = new ClassB();
 //        b.callServiceBy();
 
-//        getReturnDto("ClassA");
+        getReturnDto("ClassA");
 
 
 //        int a = 1;

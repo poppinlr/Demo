@@ -5,7 +5,7 @@ package inheritancedemo;
  */
 public class Demo {
     public static void main(String[] args) {
-        SuperClass superClass = new SubClass();
+        SuperClass superClass = new SubClass(5);
         superClass.fun();
     }
 }

@@ -2,11 +2,13 @@ package staticdemo;
 
 import lombok.Data;
 
+import java.util.Comparator;
+
 /**
  * Created by zshen on 04/05/2017.
  */
 @Data
-public class Employee implements Comparable<Employee>, Cloneable{
+public class Employee implements Comparable<Employee>, Cloneable, Comparator{
     public static int nextId = 1;
     private int id;
 
@@ -33,5 +35,14 @@ public class Employee implements Comparable<Employee>, Cloneable{
             e.printStackTrace();
         }
         return returnEmp;
+    }
+
+    public void Employee(){
+        
+    }
+
+    @Override
+    public int compare(Object o1, Object o2) {
+        return 0;
     }
 }
