@@ -5,7 +5,11 @@ public class MyThread extends Thread{
     @Override
     public void run() {
         super.run();
-        //TODO
-        // call API
+        try {
+            System.out.println("test");
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

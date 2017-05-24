@@ -1,11 +1,9 @@
 
+import clonedemo.Clonedemo;
 import org.apache.commons.lang3.time.DateUtils;
 import staticdemo.Employee;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by zshen on 6/14/16.
@@ -15,27 +13,37 @@ public class BasicTemp {
 
     public static void main(String[] args) {
 
-        final String str = "1";
-        final int i = 1;
-        ArrayList<Employee> list = new ArrayList();
-        EmployeeComp comp = new EmployeeComp();
-//        Arrays.sort(list, comp);
-        System.out.printf(list.toString());
 
         Employee employee = new Employee();
-        employee.testClone(employee);
+        Object a = "";
 
-        employee.hashCode();
+        Clonedemo clonedemo = new Clonedemo();
 
-        List a = new ArrayList();
-
-        a.add(5);
-
-        try {
-            Class.forName("");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+        clonedemo.subPublic();
+        clonedemo.superPublic();
+//        String b = (String)a.clone();
+//        final String str = "1";
+//        final int i = 1;
+//        ArrayList<Employee> list = new ArrayList();
+//        EmployeeComp comp = new EmployeeComp();
+////        Arrays.sort(list, comp);
+//        System.out.printf(list.toString());
+//
+//        Employee employee = new Employee();
+//        employee.clone();
+//        employee.testClone(employee);
+//
+//        employee.hashCode();
+//
+//        List a = new ArrayList();
+//
+//        a.add(5);
+//
+//        try {
+//            Class.forName("");
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
 
 //        Calendar calendar = Calendar.getInstance();
 //        calendar.get(Calendar.DAY_OF_WEEK);

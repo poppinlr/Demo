@@ -8,18 +8,22 @@ import java.net.URL;
  */
 public class ThreadExample {
     public static void main(String[] args){
-        for(int i=0; i<100; i++){
-            new Thread("" + i){
-                public void run(){
-                    try {
-                        sendGet();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-            }.start();
-        }
-        System.out.println(System.currentTimeMillis());
+
+        MyThread thread = new MyThread();
+        thread.run();
+
+//        for(int i=0; i<100; i++){
+//            new Thread("" + i){
+//                public void run(){
+//                    try {
+//                        sendGet();
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            }.start();
+//        }
+//        System.out.println(System.currentTimeMillis());
     }
 
     // HTTP GET request

@@ -8,7 +8,7 @@ import java.util.Comparator;
  * Created by zshen on 04/05/2017.
  */
 @Data
-public class Employee implements Comparable<Employee>, Cloneable, Comparator{
+public class Employee extends Object implements Comparable<Employee>, Cloneable, Comparator{
     public static int nextId = 1;
     private int id;
 
